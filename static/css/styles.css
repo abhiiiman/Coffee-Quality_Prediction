@@ -1,0 +1,91 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #6f4e37;
+    color: #fff;
+    padding: 20px 10%;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    height: calc(100vh - 120px); /* Adjusted for header and footer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+background: url('../Images/coffee-background.jpg') no-repeat center center/cover;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 90%;
+    animation: slideIn 2s ease-out;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background: #826644;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #a58365;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #444;
+    color: #fff;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

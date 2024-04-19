@@ -4,16 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Coffee Quality Prediction</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
 </head>
 
 <body>
-    <h1>Welcome to Coffee Quality Prediction</h1>
-    <nav>
-        <ul>
-            <li><a href="/submit">Submit Data</a></li>
-        </ul>
-    </nav>
+    <header>
+        <h1>Welcome to Coffee Quality Prediction</h1>
+        <nav>
+            <ul>
+                <li><a href="/submit">Submit Data</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Discover the Taste of Quality</h2>
+                <p>Use our advanced prediction tools to evaluate your coffee's quality.</p>
+                <button onclick="location.href='/submit';">Get Started</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Coffee Quality Inc.</p>
+    </footer>
+    <script src="./script.js"></script>
 </body>
 
 </html>
