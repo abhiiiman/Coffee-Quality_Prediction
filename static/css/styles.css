@@ -8,15 +8,15 @@
 
 body, html {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     color: #333;
     line-height: 1.6;
 }
 
-header {
+header, footer {
     background: #6f4e37;
     color: #fff;
-    padding: 20px 10%;
+    padding: 8px 10%;
     text-align: center;
 }
 
@@ -35,41 +35,94 @@ nav ul li a {
     font-weight: bold;
 }
 
-main {
-    height: calc(100vh - 120px); /* Adjusted for header and footer */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-background: url('../Images/coffee-background.jpg') no-repeat center center/cover;
+.bgimg{
+    height: 100vh;
+    background: url('../images/coffee-background.jpg') no-repeat center center/cover;
 }
 
-.hero-content {
+.button {
+    padding: 8px 16px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+.button1 {
+    padding: 8px 16px;
+    background-color: #826644;
+    text-decoration: none;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.button:hover {
+    background-color: white;
+    color: black;
+}
+.button1:hover {
+    background-color: transparent;
+    text-decoration: none;
+    border: 2px solid black;
+    color: black;
+}
+
+main ,.main  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+input[type="text"], input[type="number"], input[type="submit"] {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background: #826644;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background: #a58365;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Backgrounds and content adjustment for specific pages */
+main {
+    height: calc(100vh - 160px); /* Adjusted for header and footer */
+    background: url('../images/coffee-background.jpg') no-repeat center center/cover;
+}
+
+.hero-content, form {
     text-align: center;
     max-width: 90%;
     animation: slideIn 2s ease-out;
 }
 
-.hero-content h2 {
+.hero-content h2, h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
-.hero-content p {
+.hero-content p, label {
     font-size: 1.2rem;
     margin-bottom: 20px;
-}
-
-button {
-    padding: 10px 20px;
-    background: #826644;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-button:hover {
-    background: #a58365;
 }
 
 footer {

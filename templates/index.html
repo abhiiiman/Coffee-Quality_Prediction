@@ -7,14 +7,16 @@
     <title>Coffee Quality Prediction</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 
-</head>
+</head> 
 
 <body>
     <header>
         <h1>Welcome to Coffee Quality Prediction</h1>
         <nav>
             <ul>
-                <li><a href="/submit">Submit Data</a></li>
+                <li class="button" >About Us</li>
+                <li class="button" >More Work</li>
+                <li class="button" >Connect</li>
             </ul>
         </nav>
     </header>
@@ -23,14 +25,14 @@
             <div class="hero-content">
                 <h2>Discover the Taste of Quality</h2>
                 <p>Use our advanced prediction tools to evaluate your coffee's quality.</p>
-                <button onclick="location.href='/submit';">Get Started</button>
+                <a class="button1" href="/submit">Submit Data</a>
             </div>
         </section>
     </main>
     <footer>
         <p>© 2024 Coffee Quality Inc.</p>
     </footer>
-    <script src="./script.js"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 
 </html>
