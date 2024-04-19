@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Data</title>
+</head>
+
+<body>
+    <h1>Submit Data</h1>
+    <form action="/submit" method="post">
+        <label for="country">Country of Origin:</label>
+        <input type="text" id="country" name="country" required><br><br>
+
+        <label for="altitude">Altitude (meters):</label>
+        <input type="number" id="altitude" name="altitude" required><br><br>
+
+        <label for="region">Region:</label>
+        <input type="text" id="region" name="region" required><br><br>
+
+        <label for="variety">Variety:</label>
+        <input type="text" id="variety" name="variety" required><br><br>
+
+        <label for="processingMethod">Processing Method:</label>
+        <input type="text" id="processingMethod" name="processingMethod" required><br><br>
+
+        <label for="totalCupPoints">Total Cup Points:</label>
+        <input type="number" id="totalCupPoints" name="totalCupPoints" step="0.01" required><br><br>
+
+        <label for="moisturePercentage">Moisture Percentage:</label>
+        <input type="number" id="moisturePercentage" name="moisturePercentage" step="0.01" required><br><br>
+
+        <label for="color">Color:</label>
+        <input type="text" id="color" name="color" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+        </ul>
+    </nav>
+</body>
+
+</html>
