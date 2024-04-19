@@ -22,6 +22,7 @@ header, footer {
 
 nav ul {
     list-style: none;
+    margin-bottom: 10px;
 }
 
 nav ul li {
@@ -36,8 +37,9 @@ nav ul li a {
 }
 
 .bgimg{
-    height: 100vh;
+    height: 150vh;
     background: url('../images/coffee-background.jpg') no-repeat center center/cover;
+    
 }
 
 .button {
@@ -131,6 +133,47 @@ footer {
     background: #444;
     color: #fff;
 }
+
+/* Dropdown styling */
+select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none; /* Safari and Chrome */
+    -moz-appearance: none; /* Firefox */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="6" viewBox="0 0 12 6"><path fill="%23333" d="M6 6L0 0h12z"/></svg>'); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px 6px;
+    cursor: pointer;
+}
+
+/* Hover and focus styles for dropdowns */
+select:hover, select:focus {
+    border-color: #826644;
+}
+
+/* Styling for dropdown options */
+select option {
+    padding: 8px;
+}
+
+/* Styling for submit button */
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #826644;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #a58365;
+}
+
 
 @keyframes slideIn {
     from {

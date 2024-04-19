@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <title>Submit Data</title>
 </head>
 
@@ -18,35 +18,87 @@
         </nav>
 
         <h1 class="main">Submit Data</h1>
-        <form action="/submit" method="post">
+        <form action="/result" method="post">
             <label for="country">Country of Origin:</label>
-            <input type="text" id="country" name="country" required><br><br>
-    
+            <select id="country" name="country" required>
+                {% for country, encoding in country_encodings.items() %}
+                <option value="{{ country }}">{{ country }}</option>
+                {% endfor %}
+            </select><br><br>
+
             <label for="altitude">Altitude (meters):</label>
             <input type="number" id="altitude" name="altitude" required><br><br>
-    
-            <label for="region">Region:</label>
-            <input type="text" id="region" name="region" required><br><br>
-    
-            <label for="variety">Variety:</label>
-            <input type="text" id="variety" name="variety" required><br><br>
-    
-            <label for="processingMethod">Processing Method:</label>
-            <input type="text" id="processingMethod" name="processingMethod" required><br><br>
-    
-            <label for="totalCupPoints">Total Cup Points:</label>
-            <input type="number" id="totalCupPoints" name="totalCupPoints" step="0.01" required><br><br>
-    
+
+            <label for="region">Select Region:</label>
+            <select id="region" name="region">
+                {% for value, label in region_options.items() %}
+                <option value="{{ value }}">{{ label }}</option>
+                {% endfor %}
+            </select><br><br>
+
+            <input type="hidden" name="region" value="{{ selected_region }}">
+
+
+            <label for="variety">Select Variety:</label>
+            <select name="variety" id="variety">
+                {% for code, name in variety_encodings.items() %}
+                <option value="{{ code }}">{{ name }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+
+
+            <label for="processingMethod">Select Processing Method:</label>
+            <select name="processingMethod" id="processingMethod">
+                {% for code, name in processing_method_encoding.items() %}
+                <option value="{{ code }}">{{ name }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+
+
+            <label for="aroma">Aroma:</label>
+            <input type="number" id="aroma" name="aroma" step="0.01" required><br><br>
+
+            <label for="flavor">Flavor:</label>
+            <input type="number" id="flavor" name="flavor" step="0.01" required><br><br>
+
+            <label for="aftertaste">Aftertaste:</label>
+            <input type="number" id="aftertaste" name="aftertaste" step="0.01" required><br><br>
+
+            <label for="acidity">Acidity:</label>
+            <input type="number" id="acidity" name="acidity" step="0.01" required><br><br>
+
+            <label for="body">Body:</label>
+            <input type="number" id="body" name="body" step="0.01" required><br><br>
+
+            <label for="balance">Balance:</label>
+            <input type="number" id="balance" name="balance" step="0.01" required><br><br>
+
+            <label for="uniformity">Uniformity:</label>
+            <input type="number" id="uniformity" name="uniformity" step="0.01" required><br><br>
+
+            <label for="overall">Overall:</label>
+            <input type="number" id="overall" name="overall" step="0.01" required><br><br>
+
             <label for="moisturePercentage">Moisture Percentage:</label>
             <input type="number" id="moisturePercentage" name="moisturePercentage" step="0.01" required><br><br>
-    
-            <label for="color">Color:</label>
-            <input type="text" id="color" name="color" required><br><br>
-            
-            <input  type="submit" value="Submit">
-            
+
+            <label for="quakers">Quakers:</label>
+            <input type="number" id="quakers" name="quakers" required><br><br>
+
+            <label for="color">Select Color:</label>
+            <select name="color" id="color">
+                {% for code, name in color_encoding.items() %}
+                <option value="{{ code }}">{{ name }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+
+            <button class="button1" type="submit">Submit</button>
+
         </form>
-        
+
     </div>
 </body>
 

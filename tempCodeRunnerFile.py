@@ -13,6 +13,7 @@ def submit():
         region = request.form.get('region')
         # Process the form data as needed
         return f"Selected Region: {region}"
+        pass
     else:
         country_encodings = {
             'Colombia': 0,
@@ -39,9 +40,13 @@ def submit():
             'Myanmar': 21
         }
 
+        
+
         region_options = {
             0: 'Piendamo,Cauca', 1: 'Chiayi', 2: 'Laos Borofen Plateau', 3: 'Los Santos,Tarrazu', 4: 'Popayan,Cauca', 5: 'Chimaltenango', 6: 'KILIMANJARO', 7: 'Guji', 8: 'Acatenango', 9: 'Yunlin', 10: 'tolima', 11: 'Gedeb,Yirgacheffe,Sidamo', 12: 'Shibi, Gukeng Township, Yunlin County 郵遞區號 , Taiwan (R.O.C.)', 13: 'Gukeng Township, Yunlin County', 14: 'Arusha', 15: 'Guatemala, Fraijanes, Santa Rosa', 16: '卓溪鄉Zhuoxi Township', 17: 'Chiang Mai', 18: 'Quindio', 19: 'Região Vulcânica', 20: 'Kona', 21: '壽豐鄉Shoufeng Township', 22: 'Dongshan Dist., Tainan City', 23: 'Oromia', 24: 'Southern Ethiopia Guji', 25: 'OROMIA', 26: 'Central', 27: 'Caoling , Gukeng Township, Yunlin County', 28: '秀林鄉Show Linxia Township', 29: '台灣屏東', 30: '苗栗縣', 31: 'Rwenzori', 32: 'Antigua', 33: 'Santa Rosa', 34: 'quiche', 35: '新竹縣', 36: 'Aceh Tengah', 37: 'Villa Rica', 38: 'Mbeya', 39: 'Nantou', 40: 'Campo das Vertentes', 41: 'Boquete', 42: 'Huehuetenango', 43: 'ANTIGUA GUATEMALA', 44: 'Tarrazu', 45: '( Dongshan Dist., Tainan City)', 46: 'ESTELI', 47: 'Quang Tri', 48: 'Centro, Lagunetillas-Ajuterique, Comayagua', 49: 'Ethiopia', 50: '玉里鎮Yuli Township', 51: "Ka'u district of Big Island", 52: 'Addis Ababa', 53: 'Chalatenango', 54: 'Sierra Nevada de Santa Marta', 55: 'Lintong Nihuta/Dolok Sanggul,Sumatera Utara', 56: 'Atitlán', 57: 'Itasy', 58: '新北市', 59: 'Oriente Santa rosa', 60: 'Sierra de las minas', 61: 'San Andrés, Lempira', 62: 'ARUSHA', 63: 'Sidama', 64: 'Huila', 65: 'New Oriente', 66: 'Nan', 67: 'Pereira', 68: 'HUEHUETENANGO', 69: 'Cauca', 70: "Ka'u", 71: 'Tolima', 72: 'Chiapas', 73: 'not known', 74: 'South Shan State', 75: 'San Jose, La Paz', 76: 'QUICHE', 77: 'Marcala', 78: 'Popayán Cauca', 79: 'North of Thailand', 80: 'Suan Ya Lung', 81: 'Mt Elgon', 82: 'NEW ORIENTE & HUEHUETENANGO', 83: '桃園市', 84: 'Sul de Minas', 85: 'Marcala, La Paz', 86: 'Nongluang Bolaven Plateau, Champasack, Lao PDR', 87: 'Centro, Lagunetillas - Ajuterique, Comayagua', 88: 'Los Planes de Santa Maria, La Paz', 89: 'HUILA', 90: 'ZONGOLICA, VERACRUZ', 91: 'Eatan Commune, Krong Nang District, Krong Nang Province', 92: 'Matagalpa', 93: 'west Villege', 94: 'los planes de santa maria la paz', 95: 'Apaneca - Ilamatepec', 96: 'MANTIQUEIRA / SUL DE MINAS', 97: 'Veracruz', 98: 'Matagalpa, Nicaragua', 99: 'Dalat', 100: 'Chanchamayo, La Merced', 101: 'Kona district of Big Island', 102: 'Kericho', 103: 'Corralillo Tarrazu', 104: 'Oriente', 105: 'Sumatra', 106: 'Lam Dong Province', 107: 'Mantiquira de minas', 108: 'Santander', 109: 'Coatepec, Veracruz', 110: 'occidente', 111: '臺北市', 112: 'Chiang Rai', 113: 'Alta Mogiana-Ibiraci', 114: 'Volcan Chinchontepek, San Vicente, El Salvador', 115: 'Jinotega', 116: 'Caicedonia,Valle del Cauca', 117: 'Chanchamayo, Lamerced', 118: 'Bolaven Plateau', 119: 'Volcan de San Vicente, La Paz, El Salvador'
         }
+
+
 
         variety_encodings = {
             0: 'Castillo', 1: 'Gesha', 2: 'Java', 3: 'Red Bourbon', 4: 'Sl34+Gesha', 5: 'SL34',
@@ -66,40 +71,7 @@ def submit():
 
 
 
-        return render_template('submit.html', country_encodings=country_encodings, region_options=region_options, variety_encodings=variety_encodings, processing_method_encoding=processing_method_encoding, color_encoding=color_encoding)
-    
-    
-@app.route('/result', methods=['POST'])
-def result():
-    if request.method == 'POST':
-        data = {
-            'country': request.form.get('country'),
-            'altitude': float(request.form.get('altitude')),
-            'region': int(request.form.get('region')),
-            'variety': int(request.form.get('variety')),
-            'processingMethod': int(request.form.get('processingMethod')),
-            'aroma': float(request.form.get('aroma')),
-            'flavor': float(request.form.get('flavor')),
-            'aftertaste': float(request.form.get('aftertaste')),
-            'acidity': float(request.form.get('acidity')),
-            'body': float(request.form.get('body')),
-            'balance': float(request.form.get('balance')),
-            'uniformity': float(request.form.get('uniformity')),
-            'overall': float(request.form.get('overall')),
-            'moisturePercentage': float(request.form.get('moisturePercentage')),
-            'quakers': int(request.form.get('quakers')),
-            'color': int(request.form.get('color'))
-        }
-        
-        # Call the function to predict coffee quality
-        prediction_result = coffee_quality_prediction(data)
-        
-        # Process the prediction result as needed
-        
-        return render_template('result.html', prediction_result=prediction_result)
-    
-    else:
-        render_template("result.html")
+        return render_template('submit.html', country_encodings=country_encodings, region_options=region_options,variety_encodings=variety_encodings , processing_method_encoding = processing_method_encoding,color_encoding=color_encoding)
 
 if __name__ == "__main__":
     app.run(debug=True)
