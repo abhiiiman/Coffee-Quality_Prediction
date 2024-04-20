@@ -69,23 +69,6 @@ processing_method_encoding={
 
 color_encoding={0: 'green', 1: 'blue-green', 2: 'yellowish', 3: 'yellow-green', 4: 'yellow green', 5: 'greenish', 6: 'brownish', 7: 'yellow- green', 8: 'browish-green', 9: 'bluish-green', 10: 'pale yellow', 11: 'yello-green'}
 
-
-def predict_with_model(input_data, model):
-    # Preprocess input data
-    input_df = preprocess_input_data(input_data)
-
-    # Get the feature names used during model training
-    feature_names = X_train.columns
-
-    # Reorder the columns of the input DataFrame based on feature names
-    input_df = input_df[feature_names]
-
-    # Make predictions
-    predictions = model.predict(input_df)
-
-    return predictions
-
-
 def preprocess_input_data(input_data):
     # Create a DataFrame from the input data
     df = pd.DataFrame(input_data, index=[0])
@@ -121,7 +104,7 @@ def predict_with_model(input_data, model):
 
 if __name__ == "__main__":
     # Load pre-trained model
-    model = joblib.load(r'C:\Users\Lenovo\Desktop\Visual Studio Codes\Coffee-Quality_Prediction\model.pkl')
+    model = joblib.load(r'C:\\Users\\Lenovo\\Desktop\\Visual Studio Codes\\Coffee-Quality_Prediction\\model.pkl')
 
     # Example input data (replace with actual user input)
     input_data = {
