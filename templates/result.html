@@ -1,12 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee Quality Prediction Result</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
 </head>
+
 <body>
-    <h1>Coffee Quality Prediction Result</h1>
-    <p>The predicted coffee quality value is: {{ prediction }}</p>
+    <header>
+        <h1>Coffee Quality Prediction Result</h1>
+        <h5>Each Category depicts a different defect</h5>
+        
+    </header>
+    <main>
+        <section class="result-container">
+            <div class="categories">
+                    Blackened Beans: Category 0 <br>
+                    Sour Beans: Category 1 <br>
+                    Under-ripe Beans: Category 2 <br>
+                    Over-ripe Beans: Category 3 <br>
+                    Moldy Beans: Category 4 <br>
+                    Insect-Damaged Beans: Category 5 <br>
+                    Fermented Beans: Category 6 <br>
+                    Flat Beans: Category 7 <br>
+                    Chipped Beans: Category 8 <br>
+                    Broken Beans: Category 9 <br>
+                    Stinker Beans: Category 10 <br>
+                    Hull Fragments: Category 11 <br>
+                    Mottled Beans: Category 12 <br>
+            </div>
+            <div class="box">
+                <h3>The Category for the Defects  is : </h3>
+                <p class="predicted-value">{{ prediction }}</p>
+            </div>
+            <aside class="description">
+                <h3>What are Category 2 Defects?</h3>
+                <p>Category 2 defects in coffee quality refer to specific types of imperfections or irregularities found
+                    in coffee beans during inspection or grading. These defects may include, but are not limited to,
+                    insect damage, black or sour beans, under-ripe or over-ripe beans, or other abnormalities that
+                    affect the overall quality and taste of the coffee.</p>
+            </aside>
+        </section>
+    </main>
+    <footer>
+        <a class="button1" style="margin: 5px; margin-top: 10px;" href="/">home</a>
+        <p>&copy; 2024 Coffee Quality Prediction</p>
+        <button class="know-more-btn" id="know-more-btn">
+            Know More <i class="fa fa-info-circle"></i>
+        </button>
+    </footer>
 </body>
+<script>
+    document.getElementById("know-more-btn").onclick = function () {
+        window.location.href = "{{ url_for('detailed_defects') }}";
+    };
+</script>
+
 </html>

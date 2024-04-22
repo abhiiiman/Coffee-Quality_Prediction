@@ -104,7 +104,7 @@ def predict_with_model(input_data, model):
 
 if __name__ == "__main__":
     # Load pre-trained model
-    model = joblib.load(r'C:\\Users\\Lenovo\\Desktop\\Visual Studio Codes\\Coffee-Quality_Prediction\\model.pkl')
+    model = joblib.load('Coffee_Quality_Model.pkl')
 
     # Example input data (replace with actual user input)
     input_data = {

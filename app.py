@@ -183,5 +183,10 @@ def result():
                                color_encoding=color_encoding)
     
 
+@app.route('/detailed_defects')
+def detailed_defects():
+    # Render the template for detailed defects page
+    return render_template('detailed_defects.html')
+
 if __name__ == "__main__":
     app.run(debug=True)
